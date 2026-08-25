@@ -13,16 +13,11 @@
             --text-muted: #94a3b8;
             --accent-green: #00ff66;
             --accent-cyan: #00f0ff;
-            --accent-red: #ff3366;
             --font-mono: 'Fira Code', monospace;
             --font-sans: 'Inter', sans-serif;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             background-color: var(--bg-color);
@@ -35,19 +30,11 @@
 
         #matrix-bg {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.15;
-            pointer-events: none;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; opacity: 0.15; pointer-events: none;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        .container { max-width: 900px; margin: 0 auto; }
 
         .terminal-header {
             background: var(--card-bg);
@@ -55,7 +42,7 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .terminal-bar {
@@ -66,16 +53,8 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        .dots {
-            display: flex;
-            gap: 8px;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
+        .dots { display: flex; gap: 8px; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
         .dot.red { background: #ff5f56; }
         .dot.yellow { background: #ffbd2e; }
         .dot.green { background: #27c93f; }
@@ -92,54 +71,20 @@
             font-family: var(--font-mono);
         }
 
-        .prompt-line {
-            color: var(--accent-green);
-            margin-bottom: 10px;
-        }
-
+        .prompt-line { color: var(--accent-green); margin-bottom: 15px; }
         .prompt-user { color: var(--accent-cyan); }
         .prompt-host { color: var(--accent-green); }
 
-        .hero-title {
-            font-size: 1.8rem;
-            color: #fff;
-            margin: 10px 0;
-            font-weight: 600;
-        }
+        h1 { color: #fff; font-size: 1.8rem; margin-bottom: 15px; }
+        p { margin-bottom: 15px; color: var(--text-muted); font-family: var(--font-sans); }
 
-        .hero-bio {
-            color: var(--text-muted);
-            font-family: var(--font-sans);
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 255, 102, 0.1);
-            color: var(--accent-green);
-            border: 1px solid rgba(0, 255, 102, 0.3);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-family: var(--font-mono);
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent-green);
-            border-radius: 50%;
-            box-shadow: 0 0 8px var(--accent-green);
-        }
-
+        /* Navigation Tabs */
         .nav-tabs {
             display: flex;
             gap: 15px;
             border-bottom: 1px solid var(--border-color);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
         }
 
         .tab-btn {
@@ -147,7 +92,7 @@
             border: none;
             color: var(--text-muted);
             font-family: var(--font-mono);
-            font-size: 1rem;
+            font-size: 0.95rem;
             padding: 10px 15px;
             cursor: pointer;
             border-bottom: 2px solid transparent;
@@ -159,16 +104,13 @@
             border-bottom-color: var(--accent-cyan);
         }
 
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
 
+        /* Grid Cards */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
         }
 
@@ -197,13 +139,14 @@
 
         .card-title {
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 10px;
+            font-family: var(--font-mono);
         }
 
         .card-desc {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             margin-bottom: 15px;
         }
 
@@ -211,16 +154,23 @@
             color: var(--accent-cyan);
             text-decoration: none;
             font-family: var(--font-mono);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
         }
 
-        .card-link:hover {
-            text-decoration: underline;
+        .card-link:hover { text-decoration: underline; }
+
+        .info-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
         }
 
         footer {
-            margin-top: 50px;
+            margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid var(--border-color);
             text-align: center;
@@ -233,18 +183,14 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .social-links a {
-            color: var(--text-main);
+            color: var(--accent-cyan);
             text-decoration: none;
-            transition: color 0.2s;
         }
-
-        .social-links a:hover {
-            color: var(--accent-green);
-        }
+        .social-links a:hover { color: var(--accent-green); }
     </style>
 </head>
 <body>
@@ -252,6 +198,7 @@
     <canvas id="matrix-bg"></canvas>
 
     <div class="container">
+        <!-- Header Terminal -->
         <header class="terminal-header">
             <div class="terminal-bar">
                 <div class="dots">
@@ -259,71 +206,82 @@
                     <span class="dot yellow"></span>
                     <span class="dot green"></span>
                 </div>
-                <span class="terminal-title">bash - earthyfort@defense-node: ~</span>
+                <span class="terminal-title">bash - earthyfort@cyber-node: ~</span>
             </div>
             <div class="terminal-body">
                 <div class="prompt-line">
                     <span class="prompt-user">earthyfort</span>@<span class="prompt-host">security-lab</span>:~$ whoami
                 </div>
-                <h1 class="hero-title">Defensive & Offensive Security Specialist</h1>
-                <p class="hero-bio">
-                    Dedicated to threat mitigation, security analysis, and safeguarding digital infrastructure behind the scenes.
-                </p>
-                <div class="status-badge">
-                    <span class="status-dot"></span> SYSTEM ONLINE // OPEN FOR COLLABORATION
-                </div>
+                <h1>Welcome!</h1>
+                <p>I'm a Cybersecurity Enthusiast who likes to do my work behind the scenes and let you do your activities while I keep you protected from cyber threats.</p>
             </div>
         </header>
 
+        <!-- Navigation Tabs -->
         <nav class="nav-tabs">
             <button class="tab-btn active" onclick="switchTab(event, 'projects')">[ Projects ]</button>
             <button class="tab-btn" onclick="switchTab(event, 'writeups')">[ Write-ups ]</button>
-            <button class="tab-btn" onclick="switchTab(event, 'skills')">[ Skills ]</button>
+            <button class="tab-btn" onclick="switchTab(event, 'skills')">[ Skills & Contact ]</button>
         </nav>
 
+        <!-- Projects Tab (Based on actual Github Repos) -->
         <div id="projects" class="tab-content active">
             <div class="grid">
                 <div class="card">
-                    <span class="card-tag">Python // Security Tool</span>
-                    <h3 class="card-title">Network Packet Inspector</h3>
-                    <p class="card-desc">Monitors network traffic to detect anomalies and flag malicious signatures in real-time.</p>
+                    <span class="card-tag">Python // Automation</span>
+                    <h3 class="card-title">Phishing Email Analyzer</h3>
+                    <p class="card-desc">Tool designed to parse, inspect, and analyze suspicious email headers and indicators of compromise.</p>
                     <a href="https://github.com/earthyfort/projects" target="_blank" class="card-link">View Repo &rarr;</a>
                 </div>
                 <div class="card">
-                    <span class="card-tag">SIEM // Defense</span>
-                    <h3 class="card-title">SOC Lab Automation</h3>
-                    <p class="card-desc">Simulated Active Directory environment integrated with Elastic SIEM for rule validation.</p>
+                    <span class="card-tag">Python // Detection</span>
+                    <h3 class="card-title">SSH Brute-Force Detector</h3>
+                    <p class="card-desc">Monitoring utility built to catch unauthorized SSH access attempts and brute-force signatures.</p>
+                    <a href="https://github.com/earthyfort/projects" target="_blank" class="card-link">View Repo &rarr;</a>
+                </div>
+                <div class="card">
+                    <span class="card-tag">Python // Intel</span>
+                    <h3 class="card-title">Threat Lookup</h3>
+                    <p class="card-desc">Quick script utility to query threat intelligence data and analyze indicators.</p>
+                    <a href="https://github.com/earthyfort/projects" target="_blank" class="card-link">View Repo &rarr;</a>
+                </div>
+                <div class="card">
+                    <span class="card-tag">Python // Parsing</span>
+                    <h3 class="card-title">Win Event Parser</h3>
+                    <p class="card-desc">Parser tool to extract and process Windows Event logs for security analysis and auditing.</p>
+                    <a href="https://github.com/earthyfort/projects" target="_blank" class="card-link">View Repo &rarr;</a>
+                </div>
+                <div class="card">
+                    <span class="card-tag">Python // Detection</span>
+                    <h3 class="card-title">YARA Generator</h3>
+                    <p class="card-desc">Automation script to assist in generating YARA rules for malware hunting and classification.</p>
                     <a href="https://github.com/earthyfort/projects" target="_blank" class="card-link">View Repo &rarr;</a>
                 </div>
             </div>
         </div>
 
+        <!-- Write-ups Tab -->
         <div id="writeups" class="tab-content">
-            <div class="grid">
-                <div class="card">
-                    <span class="card-tag">TryHackMe // Medium</span>
-                    <h3 class="card-title">Linux PrivEsc Walkthrough</h3>
-                    <p class="card-desc">Step-by-step breakdown of exploiting misconfigured SUID binaries to obtain root privilege.</p>
-                    <a href="#" class="card-link">Read Analysis &rarr;</a>
-                </div>
+            <div class="info-box">
+                <p style="color: #fff; margin-bottom: 10px;">// Status: Coming Soon</p>
+                <p>Write-ups are currently under development. Stay tuned for upcoming CTF walkthroughs and analysis reports!</p>
             </div>
         </div>
 
+        <!-- Skills & Contact Tab -->
         <div id="skills" class="tab-content">
-            <div class="card">
-                <span class="card-tag">Core Stack</span>
-                <h3 class="card-title" style="margin-bottom:15px;">Technical Arsenal</h3>
-                <p class="card-desc">
-                    <strong>Languages:</strong> Python, Bash, SQL<br>
-                    <strong>Tools:</strong> Wireshark, Metasploit, Nmap, Burp Suite, Elastic SIEM<br>
-                    <strong>Domains:</strong> Threat Analysis, Incident Response, Network Defense
-                </p>
+            <div class="info-box">
+                <p style="color: #fff; margin-bottom: 10px;">// Professional Profile</p>
+                <p>My full technical skill stack and detailed background are available directly in my CV.</p>
+                <p style="margin-top: 15px;">If you are interested in collaborating or discussing opportunities, feel free to connect via LinkedIn:</p>
+                <p style="margin-top: 10px;"><a href="https://linkedin.com/in/nia-es" target="_blank" style="color: var(--accent-cyan);">→ LinkedIn (it’s not a phishing link. rest assured)</a></p>
             </div>
         </div>
 
+        <!-- Footer -->
         <footer>
             <div class="social-links">
-                <a href="https://github.com/earthyfort" target="_blank">GitHub</a>
+                <a href="https://github.com/earthyfort/projects" target="_blank">GitHub Projects</a>
                 <a href="https://linkedin.com/in/nia-es" target="_blank">LinkedIn</a>
             </div>
             <p>&copy; 2026 earthyfort. All security protocols verified.</p>
@@ -364,7 +322,6 @@
             }
         }
         setInterval(drawMatrix, 33);
-
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
